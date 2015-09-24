@@ -11,7 +11,8 @@
 	2. give each container a data-set attribute with a value that matches all other containers' values
 	3. Place your appendAround content in one of the potential containers
 	4. Configure your CSS to only display one potential container at a time (and display others depending on @media conditions in your CSS)
-	4. Call $.appendAround() when the DOM is ready, and it'll keep all appendAround content in a visibile container at all times
+	5. Call $.appendAround() when the DOM is ready, and it'll keep all appendAround content in a visibile container at all times
+	6. An "appendAround" event is triggered on the visible container each time it receives the appendAround content. It bubbles by default, meaning you can listen to it on `window` for example.
 
 
 ## Sample markup
@@ -80,3 +81,6 @@
 ## Sample JavaScript call
 
     $.appendAround();
+		$(window).on('appendAround', function (event, container) {
+			// container = the visible container that the content was moved to.
+		});

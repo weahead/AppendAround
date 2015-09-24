@@ -102,8 +102,8 @@
       <span class="description">A Responsive Markup Pattern.</span>
     </p>
     <ul class="outbound-links">
-      <li><a href="https://github.com/filamentgroup/AppendAround">Code</a></li>
-      <li><a href="https://github.com/filamentgroup/AppendAround/issues">Issues</a></li>
+      <li><a href="https://github.com/weahead/AppendAround">Code</a></li>
+      <li><a href="https://github.com/weahead/AppendAround/issues">Issues</a></li>
     </ul>
   </div>
 </div>
@@ -111,6 +111,7 @@
 	<div class="docs-main">
 		<h3>AppendAround: A Responsive Markup Pattern</h3>
 		<p>[c]@scottjehl, Filament Group, Inc. MIT/GPL</p>
+		<p>[c] We ahead AB. MIT/GPL</p>
 
 		<p>Sometimes, complex responsive layouts are hindered by source order. This pattern allows you to control where an element should be in the DOM by setting one of its potential parent containers (paired in the source with matching <code>data-set</code> attributes) to <code>display: block</code> at a particular breakpoint.</p>
 
@@ -156,6 +157,9 @@
 	<script src="appendAround.js"></script>
 	<script>
 	/* Call appendAround */
+	$(window).on('appendAround', function (event, container) {
+		console.log('Container received content', container);
+	});
 	$.appendAround();
 </script>
 </body>

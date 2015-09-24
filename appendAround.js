@@ -35,8 +35,9 @@ how-to:
 			if (children.hasOwnProperty(set)) {
 				var content = children[set];
 				var container = getVisibleContainer(set);
-				if (container) {
+				if (container && content.get(0).parentNode !== container.get(0)) {
 					container.append(content);
+					container.trigger('appendAround', [container.get(0)]);
 					return true;
 				}
 			}
