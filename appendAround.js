@@ -38,7 +38,6 @@ how-to:
 				if (container && content.get(0).parentNode !== container.get(0)) {
 					container.append(content);
 					container.trigger('appendAround', [container.get(0)]);
-					return true;
 				}
 			}
 		}
